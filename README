@@ -1,9 +1,11 @@
 # mongo-sts-with-nfs
 
-1.Create all kubernetes resources
-2.Run the following commands to get the exact FQDN
-  >)kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm
+1.Configure NFS server in local machine
+2.Create all kubernetes resources
+3.Run the following commands to get the exact FQDN
+  >)kubectl run cnt -i --tty --image=busybox --rm
   >)nslookup <headless-service-name>
-3.Access the pod created using the <pod-4.yaml> file, and connect to any stateful pod using the resu  lt returned by the previous command
-  >)mongo <pod-hostname>.<headless-service-name>.default.svc.cluster.local
+4.From client pod(which created using <pod.yaml> file) connect to any 
+  stateful pod using the result returned by the previous command
+  >)mongo mongodb://<username>:<password>@<target-pod-ip>.<headless-svc-name>.default.svc.cluster.local
 
