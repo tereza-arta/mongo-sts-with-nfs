@@ -36,7 +36,7 @@ spec:
       name: db-volume
     spec:
       storageClassName: ""
-      accessModes: [ "ReadWriteMany" ]
+      accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
           storage: 200Mi
