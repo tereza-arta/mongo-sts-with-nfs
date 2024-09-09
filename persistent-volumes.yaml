@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: nfs-volume-1
 spec:
+  storageClassName: ""
   capacity:
     storage: 200Mi
   volumeMode: Filesystem
