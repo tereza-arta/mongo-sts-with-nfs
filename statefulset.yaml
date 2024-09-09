@@ -35,6 +35,7 @@ spec:
   - metadata:
       name: db-volume
     spec:
+      storageClassName: ""
       accessModes: [ "ReadWriteMany" ]
       resources:
         requests:
