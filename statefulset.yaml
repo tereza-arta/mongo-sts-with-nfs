@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: mongodb-sts
 spec:
-  serviceName: database
+  #serviceName: database
   replicas: 3
   selector:
     matchLabels:
@@ -21,8 +21,6 @@ spec:
         - name: db-volume
           mountPath: /data/db
         env:
-          - name: serviceName
-            value: "pg-service"
           - name: MONGO_INITDB_ROOT_USERNAME
             valueFrom:
               secretKeyRef:
