@@ -21,6 +21,8 @@ spec:
         - name: db-volume
           mountPath: /data/db
         env:
+          - name: serviceName
+            value: "pg-service"
           - name: MONGO_INITDB_ROOT_USERNAME
             valueFrom:
               secretKeyRef:
